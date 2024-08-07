@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 var client = new HttpClient();
 
-string apiURL = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit";
+string apiURL = "https://v2.jokeapi.dev/joke/Programming?safe-mode";
 var response = (await client.GetAsync(apiURL));
 var json = (await response.Content.ReadAsStringAsync());
 
