@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.Data.Analysis;
 
 // Define data path
-var dataPath = Path.GetFullPath(@"data/housing-prices.csv");
+var dataPath = Path.GetFullPath(@"data/home-sale-prices.csv");
 
 // Load the data into the data frame
 var dataFrame = DataFrame.LoadCsv(dataPath);
@@ -14,7 +14,7 @@ var dataFrame = DataFrame.LoadCsv(dataPath);
 Console.WriteLine(dataFrame.Description());
 
 // Filter for prices over 200,000
-PrimitiveDataFrameColumn<bool> boolFilter = dataFrame["CurrentPrice"].ElementwiseGreaterThan(200000);
+PrimitiveDataFrameColumn<bool> boolFilter = dataFrame["CurrentPrice"].ElementwiseLessThan(250000);
 DataFrame filteredDataFrame = dataFrame.Filter(boolFilter);
 
 Console.WriteLine(filteredDataFrame.Description());
