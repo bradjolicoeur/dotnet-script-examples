@@ -5,7 +5,7 @@ using System.Linq;
 using Microsoft.Data.Analysis;
 
 // Define data path
-var dataPath = Path.GetFullPath(@"data/home-sale-prices.csv");
+var dataPath = Path.GetFullPath(@"data/home-sale-prices-10000.csv");
 
 // Load the data into the data frame
 var dataFrame = DataFrame.LoadCsv(dataPath);
